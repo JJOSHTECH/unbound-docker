@@ -1,5 +1,8 @@
-FROM debian:buster as openssl
-LABEL maintainer="Matthew Vance"
+# Use a Debian Image
+FROM arm32v7/debian:stretch-slim
+
+#ARM Support
+COPY qemu-arm-static /usr/bin
 
 ENV VERSION_OPENSSL=openssl-1.1.1f \
     SHA256_OPENSSL=186c6bfe6ecfba7a5b48c47f8a1673d0f3b0e5ba2e25602dd23b629975da3f35 \
